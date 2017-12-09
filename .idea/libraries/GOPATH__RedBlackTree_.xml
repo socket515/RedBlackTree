@@ -1,0 +1,28 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;RedBlackTree&gt;">
+    <CLASSES>
+      <root url="file://F:/goplace/geogr/src/git.umlife.net" />
+      <root url="file://F:/goplace/geogr/src/polar2cartesian" />
+      <root url="file://F:/goplace/geogr/src/stacker" />
+      <root url="file://F:/goplace/geogr/src/Test" />
+      <root url="file://F:/goplace/geogr/src/bigdigits" />
+      <root url="file://F:/goplace/geogr/src/hello" />
+      <root url="file://F:/goplace/geogr/src/safemap" />
+      <root url="file://F:/goplace/geogr/src/.idea" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://F:/goplace/geogr/src/git.umlife.net" />
+      <root url="file://F:/goplace/geogr/src/polar2cartesian" />
+      <root url="file://F:/goplace/geogr/src/stacker" />
+      <root url="file://F:/goplace/geogr/src/Test" />
+      <root url="file://F:/goplace/geogr/src/bigdigits" />
+      <root url="file://F:/goplace/geogr/src/hello" />
+      <root url="file://F:/goplace/geogr/src/safemap" />
+      <root url="file://F:/goplace/geogr/src/.idea" />
+    </SOURCES>
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>
