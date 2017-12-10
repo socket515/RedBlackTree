@@ -61,12 +61,12 @@ func(rbNode *RBNode) getUncle() *RBNode {
 func(rbNode *RBNode) leftRotate()*RBNode {
 	right := rbNode.right
 	if right == nil {
-		return
+		return nil
 	}
 	grandSon := right.left
 	right.left = rbNode
 	rbNode.right = grandSon
-	parent := rbNode.getGrandParent()
+	parent := rbNode.parent
 	if parent != nil {
 		if parent.left == rbNode {
 			parent.left = right
@@ -85,12 +85,12 @@ func(rbNode *RBNode) leftRotate()*RBNode {
 func(rbNode *RBNode) rightRotate()*RBNode {
 	left := rbNode.left
 	if left == nil {
-		return
+		return nil
 	}
 	grandSon := left.right
 	left.right = rbNode
 	rbNode.left = grandSon
-	parent := rbNode.getGrandParent()
+	parent := rbNode.parent
 	if parent != nil {
 		if parent.left == rbNode {
 			parent.left = left

@@ -1,6 +1,9 @@
 package RBTree
 
-import "fmt"
+import (
+	"fmt"
+	"container/list"
+)
 
 type RBTree struct {
 	root *RBNode
@@ -26,11 +29,43 @@ func(rbTree *RBTree) MidRec(){
 	midRec(rbTree.root)
 }
 
+//层序遍历输出
+func(rbTree *RBTree) LevelTraversal(){
+	l := list.New()
+	l.PushBack(rbTree.root)
+	levelTraversal(l)
+}
+
+//层序遍历
+func  levelTraversal(l *list.List){
+	e := l.Front()
+	l.Remove(e)
+	for e != nil {
+		v := e.Value
+		pNode := v.(*RBNode)
+		fmt.Print(pNode.entry.GetValue())
+		fmt.Print(" ")
+		fmt.Println(pNode.color)
+		if pNode.left != nil {
+			l.PushBack(pNode.left)
+		}
+		if pNode.right != nil {
+			l.PushBack(pNode.right)
+		}
+		e = l.Front()
+		if e!= nil {
+			l.Remove(e)
+		}
+	}
+}
+
 //中序遍历
 func midRec(pNode *RBNode){
 	if pNode != nil {
 		midRec(pNode.left)
-		fmt.Println(pNode.entry.GetValue())
+		fmt.Print(pNode.entry.GetValue())
+		fmt.Print(" ")
+		fmt.Println(pNode.color)
 		midRec(pNode.right)
 	}
 }
@@ -101,12 +136,14 @@ func(rbTree *RBTree) insertCheck(pNode *RBNode){
 				}
 			} else {
 				if parent.left == pNode {
-					parent.rightRotate()//父节点先左旋
+					parent.rightRotate()//父节点先右旋
 				}
 				if root := grandParent.leftRotate(); root != nil {
 					rbTree.root = root
 				}
 			}
+			grandParent.color = RED
+			parent.color = BLACK
 		}
 	}
 }
