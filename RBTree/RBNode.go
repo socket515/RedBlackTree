@@ -58,48 +58,72 @@ func (rbNode *RBNode) getUncle() *RBNode {
 
 //左旋参数为旋转轴的节点 若根节点变动返回根节点
 func (rbNode *RBNode) leftRotate() *RBNode {
-	right := rbNode.right
-	if right == nil {
-		return nil
+	var root *RBNode
+	if rbNode == nil {
+		return root
 	}
-	grandSon := right.left
-	right.left = rbNode
-	rbNode.right = grandSon
+	if rbNode.right == nil {
+		return root
+	}
 	parent := rbNode.parent
+	var isLeft bool
 	if parent != nil {
-		if parent.left == rbNode {
-			parent.left = right
-		} else {
-			parent.right = right
-		}
-		right.parent = parent
-		return nil
-	} else {
-		right.parent = parent
-		return right
+		isLeft = parent.left == rbNode
 	}
+	grandson := rbNode.right.left
+	if rbNode.right.left != nil {
+		rbNode.right.left.parent = rbNode
+	}
+	rbNode.right.left = rbNode
+	rbNode.parent = rbNode.right
+	rbNode.right = grandson
+	// 判断是否换了根节点
+	if parent == nil {
+		rbNode.parent.parent = nil
+		root = rbNode.parent
+	} else {
+		if isLeft {
+			parent.left = rbNode.parent
+		} else {
+			parent.right = rbNode.parent
+		}
+		rbNode.parent.parent = parent
+	}
+	return root
 }
 
 //右旋参数为旋转轴的节点 若根节点变动返回根节点
 func (rbNode *RBNode) rightRotate() *RBNode {
-	left := rbNode.left
-	if left == nil {
-		return nil
+	var root *RBNode
+	if rbNode == nil {
+		return root
 	}
-	grandSon := left.right
-	left.right = rbNode
-	rbNode.left = grandSon
+	if rbNode.left == nil {
+		return root
+	}
 	parent := rbNode.parent
+	var isLeft bool
 	if parent != nil {
-		if parent.left == rbNode {
-			parent.left = left
-		} else {
-			parent.right = left
-		}
-		left.parent = parent
-		return nil
-	} else {
-		left.parent = parent
-		return left
+		isLeft = parent.left == rbNode
 	}
+	grandson := rbNode.left.right
+	if grandson != nil {
+		grandson.parent = rbNode
+	}
+	rbNode.left.right = rbNode
+	rbNode.parent = rbNode.left
+	rbNode.left = grandson
+	// 判断是否换了根节点
+	if parent == nil {
+		rbNode.parent.parent = nil
+		root = rbNode.parent
+	} else {
+		if isLeft {
+			parent.left = rbNode.parent
+		} else {
+			parent.right = rbNode.parent
+		}
+		rbNode.parent.parent = parent
+	}
+	return root
 }

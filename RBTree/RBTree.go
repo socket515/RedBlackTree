@@ -30,6 +30,10 @@ func (rbTree *RBTree) GetNode(entry Entryer) *RBNode {
 	return result
 }
 
+func (rbTree *RBTree) GetRoot(){
+	fmt.Println(rbTree.root)
+}
+
 //删除操作
 func (rbTree *RBTree) DeleteNode(entry Entryer) bool{
 	query := getNode(rbTree.root,entry)
@@ -45,7 +49,6 @@ func (rbTree *RBTree) DeleteNode(entry Entryer) bool{
 			mostLeft = mostLeft.left
 		}
 		query.entry = mostLeft.entry //替换
-		mostLeft.color = RED
 		rbTree.deleteOneNode(mostLeft)
 	}
 	return true
@@ -72,7 +75,8 @@ func levelTraversal(l *list.List) {
 		pNode := v.(*RBNode)
 		fmt.Print(pNode.entry.GetValue())
 		fmt.Print(" ")
-		fmt.Println(pNode.color)
+		fmt.Print(pNode.color)
+		fmt.Print("  ")
 		if pNode.left != nil {
 			l.PushBack(pNode.left)
 		}
@@ -92,7 +96,8 @@ func midRec(pNode *RBNode) {
 		midRec(pNode.left)
 		fmt.Print(pNode.entry.GetValue())
 		fmt.Print(" ")
-		fmt.Println(pNode.color)
+		fmt.Print(pNode.color)
+		fmt.Print("  ")
 		midRec(pNode.right)
 	}
 }
@@ -208,15 +213,15 @@ func (rbTree *RBTree) deleteOneNode(rbNode *RBNode){
 		return
 	}
 	if child == nil{
-		child = NewRBNode(Entryer{})
+		child = new(RBNode)
 		child.parent = parent
 		if parent.left == rbNode {
 			parent.left = child
-			//删除检查
+			rbTree.deleteCheck(child)
 			parent.left = nil
 		} else {
 			parent.right = child
-			//删除检查
+			rbTree.deleteCheck(child)
 			parent.right = nil
 		}
 		child = nil
@@ -234,7 +239,7 @@ func (rbTree *RBTree) deleteOneNode(rbNode *RBNode){
 			rbNode = nil
 			return
 		}
-		//删除检查
+		rbTree.deleteCheck(child)
 		rbNode = nil
 		return
 	}
@@ -277,6 +282,7 @@ func (rbTree *RBTree) deleteCheck(rbNode *RBNode){
 		}
 		brother.color = RED
 		rbTree.deleteCheck(parent)
+		return
 	}
 	if parent.left == rbNode && s1Color && !s2Color {
 		brother.color = RED

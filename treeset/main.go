@@ -24,11 +24,20 @@ func (s set) GetValue() interface{} {
 
 func main() {
 	rb := RBTree.RBTree{}
-	for i := 0; i < 20; i++ {
+	for i := 0; i < 8; i++ {
 		s := set(i)
 		rb.Insert(s)
 	}
+	rb.GetRoot()
 	rb.MidRec()
 	fmt.Println()
 	rb.LevelTraversal()
+	fmt.Println()
+	s := set(2)
+	rb.DeleteNode(s)
+	rb.GetRoot()
+	rb.MidRec()
+	fmt.Println()
+	rb.LevelTraversal()
+
 }
