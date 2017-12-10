@@ -7,7 +7,7 @@ import (
 
 type set int
 
-func(s set) Compare(se RBTree.Entryer) int{
+func (s set) Compare(se RBTree.Entryer) int {
 	sh := se.(set)
 	if s > sh {
 		return -1
@@ -18,14 +18,13 @@ func(s set) Compare(se RBTree.Entryer) int{
 	}
 }
 
-func(s set) GetValue()interface{}  {
+func (s set) GetValue() interface{} {
 	return s
 }
 
-
 func main() {
 	rb := RBTree.RBTree{}
-	for i :=0 ; i < 20 ; i++ {
+	for i := 0; i < 20; i++ {
 		s := set(i)
 		rb.Insert(s)
 	}

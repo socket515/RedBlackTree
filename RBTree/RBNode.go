@@ -1,31 +1,29 @@
 package RBTree
 
-
-
 const (
-	RED bool = true
+	RED   bool = true
 	BLACK bool = false
 )
 
-type  RBNode struct {
-	entry Entryer
-	color bool
-	parent,left,right *RBNode
+type RBNode struct {
+	entry               Entryer
+	color               bool
+	parent, left, right *RBNode
 }
 
 func NewRBNode(entry Entryer) *RBNode {
 	rbNoe := &RBNode{
-		entry:entry,
-		color:RED,
-		parent:nil,
-		left:nil,
-		right:nil,
+		entry:  entry,
+		color:  RED,
+		parent: nil,
+		left:   nil,
+		right:  nil,
 	}
 	return rbNoe
 }
 
 // getGrandParent() 获取父级节点的父级节点
-func(rbNode *RBNode) getGrandParent() *RBNode {
+func (rbNode *RBNode) getGrandParent() *RBNode {
 	parent := rbNode.parent
 	if parent != nil {
 		return parent.parent
@@ -33,8 +31,9 @@ func(rbNode *RBNode) getGrandParent() *RBNode {
 		return nil
 	}
 }
+
 // getSibling() 获取兄弟节点
-func(rbNode *RBNode) getSibling() *RBNode {
+func (rbNode *RBNode) getSibling() *RBNode {
 	parent := rbNode.parent
 	if parent != nil {
 		if rbNode == parent.left {
@@ -48,7 +47,7 @@ func(rbNode *RBNode) getSibling() *RBNode {
 }
 
 // GetUncle() 父节点的兄弟节点
-func(rbNode *RBNode) getUncle() *RBNode {
+func (rbNode *RBNode) getUncle() *RBNode {
 	parent := rbNode.parent
 	if parent != nil {
 		return parent.getSibling()
@@ -58,7 +57,7 @@ func(rbNode *RBNode) getUncle() *RBNode {
 }
 
 //左旋参数为旋转轴的节点 若根节点变动返回根节点
-func(rbNode *RBNode) leftRotate()*RBNode {
+func (rbNode *RBNode) leftRotate() *RBNode {
 	right := rbNode.right
 	if right == nil {
 		return nil
@@ -82,7 +81,7 @@ func(rbNode *RBNode) leftRotate()*RBNode {
 }
 
 //右旋参数为旋转轴的节点 若根节点变动返回根节点
-func(rbNode *RBNode) rightRotate()*RBNode {
+func (rbNode *RBNode) rightRotate() *RBNode {
 	left := rbNode.left
 	if left == nil {
 		return nil
