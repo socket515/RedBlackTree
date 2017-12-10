@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e2378b9-635f-4dc9-8ea4-e40b81ffaecb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RBTree/Entry.go" afterPath="$PROJECT_DIR$/RBTree/Entry.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RBTree/RBNode.go" afterPath="$PROJECT_DIR$/RBTree/RBNode.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RBTree/RBTree.go" afterPath="$PROJECT_DIR$/RBTree/RBTree.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treeset/main.go" afterPath="$PROJECT_DIR$/treeset/main.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,21 +14,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RBNode.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RBNode.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RBTree/RBNode.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="99" column="26" lean-forward="true" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
+            <state relative-caret-position="285">
+              <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RBTree.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RBTree.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RBTree/RBTree.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-342">
-              <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+            <state relative-caret-position="4446">
+              <caret line="297" column="9" lean-forward="false" selection-start-line="297" selection-start-column="9" selection-end-line="297" selection-end-column="9" />
               <folding>
                 <element signature="e#16#51#0" expanded="true" />
               </folding>
@@ -85,8 +82,8 @@
         <option value="$PROJECT_DIR$/RBTree/main.go" />
         <option value="$PROJECT_DIR$/Entry/treeset.go" />
         <option value="$PROJECT_DIR$/RBTree/Entry.go" />
-        <option value="$PROJECT_DIR$/RBTree/RBNode.go" />
         <option value="$PROJECT_DIR$/treeset/main.go" />
+        <option value="$PROJECT_DIR$/RBTree/RBNode.go" />
         <option value="$PROJECT_DIR$/RBTree/RBTree.go" />
       </list>
     </option>
@@ -614,21 +611,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RBTree/RBTree.go">
+    <entry file="file://$PROJECT_DIR$/RBTree/RBNode.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-342">
-          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding>
-            <element signature="e#16#51#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="285">
+          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RBTree/RBNode.go">
+    <entry file="file://$PROJECT_DIR$/RBTree/RBTree.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="99" column="26" lean-forward="true" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="4446">
+          <caret line="297" column="9" lean-forward="false" selection-start-line="297" selection-start-column="9" selection-end-line="297" selection-end-column="9" />
+          <folding>
+            <element signature="e#16#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
